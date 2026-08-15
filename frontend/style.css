@@ -50,15 +50,34 @@ body {
 }
 
 .collection-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
     padding: 16px;
     border: 1px solid #ddd;
     border-radius: 6px;
     background: #fafafa;
+}
+
+.collection-item-name {
+    flex: 1;
     cursor: pointer;
 }
 
 .collection-item:hover {
     background: #f5f5f5;
+}
+
+.collection-delete-button {
+    padding: 6px 10px;
+    font-size: 13px;
+    color: #b3261e;
+    border-color: #e0b4b0;
+}
+
+.collection-delete-button:hover {
+    background: #fdecea;
 }
 
 .collection-header {
@@ -70,6 +89,39 @@ body {
 
 .collection-header h2 {
     margin-bottom: 0;
+}
+
+.status-message {
+    margin-bottom: 16px;
+    padding: 10px 14px;
+    border-radius: 6px;
+    background: #eef6ff;
+    border: 1px solid #bcdcff;
+    font-size: 14px;
+}
+
+.status-message.status-error {
+    background: #fdecea;
+    border-color: #e0b4b0;
+    color: #b3261e;
+}
+
+.audio-result {
+    margin-bottom: 20px;
+    padding: 14px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    background: #fafafa;
+}
+
+.audio-result p {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.audio-result audio {
+    width: 100%;
 }
 
 #segments-container {
@@ -85,9 +137,26 @@ body {
     gap: 8px;
 }
 
+.segment-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
 .segment label {
     font-size: 14px;
     font-weight: 600;
+}
+
+.segment-actions {
+    display: flex;
+    gap: 6px;
+}
+
+.segment-actions button {
+    padding: 4px 8px;
+    font-size: 13px;
 }
 
 .segment textarea {
@@ -114,6 +183,15 @@ button {
 
 button:hover {
     background: #f2f2f2;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+button:disabled:hover {
+    background: #fff;
 }
 
 #add-segment-button {

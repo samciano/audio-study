@@ -9,7 +9,8 @@ from app.collection_manager.manager import (
     get_collection,
     get_all_collections,
     update_collection,
-    delete_collection
+    delete_collection,
+    save_collection
 )
 
 from app.tts.engine import create_engine
@@ -277,8 +278,11 @@ def api_generate_audio(collection_id):
                 segment_path
             )
 
+        # O nome do arquivo inclui o ID da coleção para evitar que
+        # duas coleções com o mesmo nome sobrescrevam o áudio uma
+        # da outra.
         filename = (
-            f"{safe_filename(collection['name'])}.mp3"
+            f"{safe_filename(collection['name'])}_{collection_id}.mp3"
         )
 
         output_path = AUDIO_DIR / filename
@@ -296,6 +300,12 @@ def api_generate_audio(collection_id):
         print(
             f"[AUDIO] FINALIZADO: {output_path}"
         )
+
+        # Guarda a referência do áudio gerado na própria coleção, para
+        # que ela possa ser reaberta e o áudio reproduzido/regenerado
+        # depois (conforme item 12 do fluxo da aplicação).
+        collection["audio_filename"] = filename
+        save_collection(collection)
 
     except Exception as error:
 
