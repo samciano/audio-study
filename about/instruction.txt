@@ -1,0 +1,74 @@
+PROJETO: audio-study
+
+audio-study/
+│
+├── app/
+│   ├── main.py
+│   │   → Arquivo principal da aplicação. Inicializa o backend/servidor local
+│   │     e conecta a interface frontend às funcionalidades do sistema.
+│   │
+│   ├── tts/
+│   │   ├── __init__.py
+│   │   └── engine.py
+│   │       → Módulo responsável pela conversão de texto para fala (TTS).
+│   │         Deve receber textos e gerar arquivos de áudio.
+│   │
+│   ├── audio/
+│   │   ├── __init__.py
+│   │   └── merger.py
+│   │       → Módulo responsável por manipular os arquivos de áudio,
+│   │         incluindo juntar os áudios dos diferentes trechos em um
+│   │         único arquivo final e inserir pausas entre eles.
+│   │
+│   └── collections/
+│       ├── __init__.py
+│       └── manager.py
+│           → Módulo responsável pelo gerenciamento das coleções:
+│             criar, salvar, carregar, editar e excluir coleções e seus
+│             respectivos trechos.
+│
+├── data/
+│   ├── collections/
+│   │   → Armazena os dados persistentes das coleções criadas pelo usuário.
+│   │
+│   └── audio/
+│       → Armazena os arquivos de áudio finais gerados pelo programa.
+│
+├── frontend/
+│   ├── index.html
+│   │   → Estrutura da interface gráfica da aplicação.
+│   │
+│   ├── style.css
+│   │   → Estilos visuais da interface.
+│   │
+│   └── app.js
+│       → Lógica da interface e comunicação com o backend.
+│
+├── temp/
+│   → Armazena arquivos temporários durante a geração dos áudios.
+│     Os arquivos temporários devem ser removidos após a geração do
+│     arquivo final.
+│
+├── requirements.txt
+│   → Lista das dependências Python necessárias para executar o projeto.
+│
+└── README.md
+    → Documentação básica do projeto e instruções para instalação e execução.
+
+
+FLUXO PRINCIPAL DA APLICAÇÃO:
+
+1. Usuário abre o programa.
+2. O menu inicial apresenta as coleções existentes e a opção
+   "Criar nova coleção".
+3. Usuário cria uma coleção.
+4. Usuário adiciona vários trechos de texto, mantendo uma ordem definida.
+5. Usuário pode editar, excluir ou reordenar os trechos antes de concluir.
+6. Ao clicar em "Concluir", o backend envia cada trecho para o mecanismo TTS.
+7. Cada trecho é convertido temporariamente em áudio.
+8. Os áudios são unidos na ordem definida pelo usuário.
+9. O sistema adiciona uma pequena pausa entre os trechos.
+10. O resultado é salvo como um único arquivo de áudio em data/audio/.
+11. Os arquivos temporários utilizados durante o processo são removidos.
+12. A coleção permanece salva em data/collections/ para poder ser editada
+    ou regenerada posteriormente.

@@ -1,0 +1,9 @@
+1. frontend/index.html
+2. frontend/style.css
+3. frontend/app.js
+4. app/main.py
+5. app/collections/manager.py
+6. app/tts/engine.py
+7. app/audio/merger.py
+8. integração completa
+9. testes

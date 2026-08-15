@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    color: #222;
+}
+
+.app {
+    width: 100%;
+    max-width: 900px;
+    min-height: 100vh;
+    margin: 0 auto;
+    background: #ffffff;
+}
+
+.header {
+    padding: 20px 24px;
+    border-bottom: 1px solid #ddd;
+}
+
+.header h1 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.screen {
+    padding: 24px;
+}
+
+.hidden {
+    display: none;
+}
+
+.screen h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#collections-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.collection-item {
+    padding: 16px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #fafafa;
+    cursor: pointer;
+}
+
+.collection-item:hover {
+    background: #f5f5f5;
+}
+
+.collection-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.collection-header h2 {
+    margin-bottom: 0;
+}
+
+#segments-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.segment {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.segment label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.segment textarea {
+    width: 100%;
+    min-height: 140px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    resize: vertical;
+    font-family: inherit;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+button {
+    padding: 10px 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #fff;
+    color: #222;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #f2f2f2;
+}
+
+#add-segment-button {
+    margin-right: 8px;
+}
+
+#finish-button {
+    margin-top: 10px;
+}
+
+#back-button {
+    padding: 8px 12px;
+}

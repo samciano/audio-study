@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Study</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="app">
+
+        <header class="header">
+            <h1>Audio Study</h1>
+        </header>
+
+        <section id="home-screen" class="screen">
+            <h2>Minhas coleções</h2>
+
+            <div id="collections-list">
+                <!-- Coleções serão carregadas aqui -->
+            </div>
+
+            <button id="new-collection-button">
+                Criar nova coleção
+            </button>
+        </section>
+
+        <section id="collection-screen" class="screen hidden">
+
+            <div class="collection-header">
+                <button id="back-button">Voltar</button>
+
+                <h2 id="collection-title">
+                    Nova coleção
+                </h2>
+            </div>
+
+            <div id="segments-container">
+                <!-- Trechos serão adicionados aqui -->
+            </div>
+
+            <button id="add-segment-button">
+                Adicionar trecho
+            </button>
+
+            <button id="finish-button">
+                Concluir
+            </button>
+
+        </section>
+
+    </main>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
